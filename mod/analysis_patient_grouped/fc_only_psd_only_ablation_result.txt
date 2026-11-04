@@ -1,0 +1,15 @@
+=== R2-Minor-3: FC-only vs PSD-only ablation, GAT hybrid (10-fold, inference-only) ===
+
+Condition       Mean acc      SD    Mean macro AUC      SD   Description
+----------------------------------------------------------------------------------------------------
+original          0.6150  0.0384            0.8347  0.0235   real PSD + real edge_attr + real flat-FC (sanity check vs Table 2)
+psd_only          0.4971  0.0301            0.7451  0.0250   real PSD node features; edge_attr and flat-FC both zeroed
+fc_only           0.4574  0.0677            0.7469  0.0324   PSD node features zeroed; edge_attr and flat-FC both real
+
+Per-fold accuracy / macro AUC:
+  original  : acc=0.5876, 0.6157, 0.6442, 0.6211, 0.6034, 0.6166, 0.6677, 0.6715, 0.5859, 0.5364
+              auc=0.8459, 0.8480, 0.8539, 0.8192, 0.8256, 0.8468, 0.8564, 0.8613, 0.7973, 0.7925
+  psd_only  : acc=0.5199, 0.4416, 0.5600, 0.5029, 0.4933, 0.5137, 0.4822, 0.4661, 0.4981, 0.4934
+              auc=0.7519, 0.7521, 0.8102, 0.7268, 0.7394, 0.7503, 0.7456, 0.7306, 0.7321, 0.7117
+  fc_only   : acc=0.5696, 0.4612, 0.3745, 0.4359, 0.4085, 0.4518, 0.3956, 0.5018, 0.3986, 0.5767
+              auc=0.7665, 0.7501, 0.6881, 0.7438, 0.7422, 0.7870, 0.7601, 0.7837, 0.6892, 0.7583

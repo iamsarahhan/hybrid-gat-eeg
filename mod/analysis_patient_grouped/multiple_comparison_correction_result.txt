@@ -1,0 +1,57 @@
+=== Benjamini-Hochberg correction across 48 pairwise-comparison tests (patient-grouped final results) ===
+
+Test                                               raw p      BH-adj p  sig(raw) sig(BH)
+------------------------------------------------------------------------------------------
+GAT vs SVM | t-test | accuracy                 7.255e-05     0.0001161       *       *   
+GAT vs SVM | t-test | auc                      0.0004198     0.0006194       *       *   
+GAT vs SVM | t-test | f1                       7.035e-05     0.0001161       *       *   
+GAT vs SVM | DeLong | macro_auc                        0             0       *       *   
+GAT vs SVM | McNemar | accuracy                        0             0       *       *   
+GAT vs SVM | bootstrap | accuracy                      0             0       *       *   
+GAT vs SVM | bootstrap | auc                           0             0       *       *   
+GAT vs SVM | bootstrap | f1                            0             0       *       *   
+GAT vs CNN | t-test | accuracy                 0.0009598      0.001316       *       *   
+GAT vs CNN | t-test | auc                      4.716e-05     8.084e-05       *       *   
+GAT vs CNN | t-test | f1                        0.001249      0.001665       *       *   
+GAT vs CNN | DeLong | macro_auc                        0             0       *       *   
+GAT vs CNN | McNemar | accuracy                        0             0       *       *   
+GAT vs CNN | bootstrap | accuracy                      0             0       *       *   
+GAT vs CNN | bootstrap | auc                           0             0       *       *   
+GAT vs CNN | bootstrap | f1                            0             0       *       *   
+GAT vs MLP | t-test | accuracy                 0.0004258     0.0006194       *       *   
+GAT vs MLP | t-test | auc                      9.039e-05       0.00014       *       *   
+GAT vs MLP | t-test | f1                       0.0004768     0.0006731       *       *   
+GAT vs MLP | DeLong | macro_auc                        0             0       *       *   
+GAT vs MLP | McNemar | accuracy                        0             0       *       *   
+GAT vs MLP | bootstrap | accuracy                      0             0       *       *   
+GAT vs MLP | bootstrap | auc                           0             0       *       *   
+GAT vs MLP | bootstrap | f1                            0             0       *       *   
+SVM vs CNN | t-test | accuracy                     0.214        0.2388                   
+SVM vs CNN | t-test | auc                        0.01965        0.0255       *       *   
+SVM vs CNN | t-test | f1                          0.1727        0.1973                   
+SVM vs CNN | DeLong | macro_auc                        0             0       *       *   
+SVM vs CNN | McNemar | accuracy                 7.42e-13      1.37e-12       *       *   
+SVM vs CNN | bootstrap | accuracy                      0             0       *       *   
+SVM vs CNN | bootstrap | auc                           0             0       *       *   
+SVM vs CNN | bootstrap | f1                            0             0       *       *   
+SVM vs MLP | t-test | accuracy                    0.2244        0.2448                   
+SVM vs MLP | t-test | auc                        0.02822       0.03565       *       *   
+SVM vs MLP | t-test | f1                          0.1234        0.1481                   
+SVM vs MLP | DeLong | macro_auc                        0             0       *       *   
+SVM vs MLP | McNemar | accuracy                 1.86e-09     3.306e-09       *       *   
+SVM vs MLP | bootstrap | accuracy                      0             0       *       *   
+SVM vs MLP | bootstrap | auc                           0             0       *       *   
+SVM vs MLP | bootstrap | f1                            0             0       *       *   
+CNN vs MLP | t-test | accuracy                    0.8979         0.917                   
+CNN vs MLP | t-test | auc                         0.9958        0.9958                   
+CNN vs MLP | t-test | f1                          0.8923         0.917                   
+CNN vs MLP | DeLong | macro_auc                        0             0       *       *   
+CNN vs MLP | McNemar | accuracy                   0.1272         0.149                   
+CNN vs MLP | bootstrap | accuracy                 0.1215        0.1481                   
+CNN vs MLP | bootstrap | auc                           0             0       *       *   
+CNN vs MLP | bootstrap | f1                       0.3207        0.3421                   
+
+Total tests: 48
+Significant at raw p<0.05: 38
+Significant at BH-adjusted p<0.05: 38
+Tests that LOST significance after BH correction: 0

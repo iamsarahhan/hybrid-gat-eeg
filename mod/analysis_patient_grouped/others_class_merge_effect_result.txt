@@ -1,0 +1,9 @@
+=== R1-M1: OTHERS class merge effect (GAT hybrid, pooled 10-fold out-of-fold predictions) ===
+
+Subtype          n   Recall (predicted OTHERS)   Predicted SEIZURE / LPD / GPD (misroute)
+------------------------------------------------------------------------------------------
+LRDA          3000     0.7163                   SEIZURE=0.1000  LPD=0.1313  GPD=0.0523
+GRDA          3000     0.7057                   SEIZURE=0.1117  LPD=0.0513  GPD=0.1313
+OTHER         3000     0.5383                   SEIZURE=0.2113  LPD=0.1630  GPD=0.0873
+------------------------------------------------------------------------------------------
+MERGED        9000     0.6534                   (should match this run's OTHERS recall in Table 2)

@@ -1,0 +1,13 @@
+# CPU analysis environment used for mod/analysis_plan (Python 3.12)
+numpy>=2.0
+pandas>=2.2
+scipy>=1.14
+scikit-learn>=1.7
+statsmodels>=0.14
+matplotlib>=3.9
+joblib
+pyarrow
+torch>=2.4      # CPU build is sufficient for r2_gat_controls_cpu.py
+torch-geometric>=2.6
+python-docx
+beautifulsoup4

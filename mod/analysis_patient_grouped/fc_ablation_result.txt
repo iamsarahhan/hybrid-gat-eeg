@@ -1,0 +1,37 @@
+=== R1-3 / Table 6 FC ablation, re-verified on GAT-hybrid (edge_dim=4 fixed) ===
+
+Original reviewer finding (old model, edge_attr silently ignored due to the
+edge_dim bug -- see review/CRITICAL_FINDING_edge_attr_ignored.md -- and
+non-patient-grouped split): removing coherence slightly IMPROVED accuracy,
+and all ablation deltas fell within fold-level error -- interpreted as
+redundancy among the 4 FC measures, not complementarity.
+
+Re-run on the current best model (GAT-hybrid, patient-grouped, edge_dim=4,
+optuna-tuned), leave-one-FC-type-out, 10-fold each. Hyperparameters reused
+from the full-4-type tuning run (not re-tuned per condition) -- see
+patient_split/fc_ablation_hybrid.py docstring for the scoping rationale.
+
+Condition            Macro AUC   Diff vs full   DeLong p
+--------------------------------------------------------
+Full (corr+coh+aec+plv)   0.8347        -            -
+Drop corr (keep coh/aec/plv)   0.8192     -0.0194      <0.001 *
+Drop coh  (keep corr/aec/plv)  0.8198     -0.0170      <0.001 *
+Drop plv  (keep corr/coh/aec)  0.8217     -0.0138      <0.001 *
+Drop aec  (keep corr/coh/plv)  0.8266     -0.0086      <0.001 *
+
+All four removals cause a statistically significant (DeLong, p<0.001) macro
+AUC drop -- the opposite pattern from the original (buggy-model) finding.
+corr and coh contribute the most (~0.017-0.019 AUC each); aec contributes
+the least (~0.009) but is still significant.
+
+Interpretation: the original "redundancy" conclusion was very likely an
+artifact of the edge_dim bug (edge_attr never reached the attention
+computation, so ablating a "type" only changed duplicate-edge topology, not
+real connectivity information). With edge_attr actually used (edge_dim=4)
+and the flat-FC branch giving the model full-resolution access to all 4
+measures, each measure now carries genuine, non-redundant signal --
+supporting the paper's original "multi-FC complementarity" claim, which the
+old (buggy) model could not actually support.
+
+Result directories: patient_split/result_4class_patient_fcablation_no_{corr,coh,aec,plv}/
+Baseline: patient_split/result_4class_patient_hybrid_auc/

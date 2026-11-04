@@ -1,0 +1,23 @@
+
+=== Patient-Clustered vs Segment-Level Bootstrap CI (GAT hybrid, pooled 10-fold out-of-fold predictions) ===
+
+Model: GAT hybrid (GATConv edge_dim=4 graph branch + flat-FC branch, patient-grouped, optuna AUC-tuned)
+N segments               : 36000
+N unique patients        : 1752
+Point estimate accuracy  : 0.6127
+
+Segment-level bootstrap:
+  95% CI                 : [0.6076, 0.6177]
+  width                  : 0.0101
+
+Patient-clustered bootstrap:
+  95% CI                 : [0.5783, 0.6468]
+  width                  : 0.0685
+
+Width ratio (clustered / segment): 6.76x
+
+NOTE: unlike the superseded review/analysis/patient_clustered_ci.py, this split
+(patient_split/fold_splits_patient.json, StratifiedGroupKFold on patient_id) IS
+patient-grouped -- no patient's segments appear in more than one of
+train/val/test within a fold. This analysis therefore reflects both the
+corrected statistical unit (patient-clustered CI) AND leakage-free predictions.

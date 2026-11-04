@@ -1,0 +1,15 @@
+hidden_channels: 49
+num_heads: 13
+num_layers: 4
+dropout: 0.25185984412422086
+lr: 6.72943073228637e-05
+weight_decay: 2.579020349622014e-05
+fc_hidden: 64
+refine_num_components: 4
+refine_num_iters: 1
+refine_tau0: 1.9629251318159913
+source: optuna_best_params_hybrid_auc.json (val_auc=0.8409) + optuna_best_params_gmmgumbel_hybrid_auc.json (val_auc=0.8425)
+architecture: GMMGumbelEdgeRefinement -> GATConv (edge_dim=4) graph branch + flat-FC MLP branch, concat -> classifier
+gumbel temperature anneal: tau0=1.9629251318159913, min_temperature=0.3, rate=0.05
+loss: class-weighted NLL (balanced, computed per-fold from train split)
+split: patient-grouped StratifiedGroupKFold (patient_id, no leakage)

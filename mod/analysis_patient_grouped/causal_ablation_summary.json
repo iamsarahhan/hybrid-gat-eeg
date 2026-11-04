@@ -1,0 +1,42 @@
+{
+  "SEIZURE": {
+    "base_acc_10fold": 0.6267777777777778,
+    "top_ablated_acc_10fold": 0.6265555555555555,
+    "top_drop_10fold": 0.00022222222222223476,
+    "fold1_base_acc": 0.6906598114824336,
+    "fold1_top_drop": 0.0008568980291345785,
+    "random_drop_mean": -0.00042844901456723004,
+    "random_drop_sd": 0.0013949289285432427,
+    "p_perm": 0.25806451612903225
+  },
+  "LPD": {
+    "base_acc_10fold": 0.48844444444444446,
+    "top_ablated_acc_10fold": 0.4876666666666667,
+    "top_drop_10fold": 0.0007777777777777661,
+    "fold1_base_acc": 0.4167364016736402,
+    "fold1_top_drop": 0.0,
+    "random_drop_mean": 0.0010320781032078174,
+    "random_drop_sd": 0.0017775725485472632,
+    "p_perm": 0.8387096774193549
+  },
+  "GPD": {
+    "base_acc_10fold": 0.682,
+    "top_ablated_acc_10fold": 0.6817777777777778,
+    "top_drop_10fold": 0.00022222222222223476,
+    "fold1_base_acc": 0.4697674418604651,
+    "fold1_top_drop": 0.0046511627906976605,
+    "random_drop_mean": 0.0009302325581395321,
+    "random_drop_sd": 0.0014209537038622718,
+    "p_perm": 0.03225806451612903
+  },
+  "OTHERS": {
+    "base_acc_10fold": 0.6534444444444445,
+    "top_ablated_acc_10fold": 0.6538888888888889,
+    "top_drop_10fold": -0.0004444444444443585,
+    "fold1_base_acc": 0.7787234042553192,
+    "fold1_top_drop": -0.004255319148936176,
+    "random_drop_mean": -0.0006619385342789607,
+    "random_drop_sd": 0.0008769379191958124,
+    "p_perm": 1.0
+  }
+}

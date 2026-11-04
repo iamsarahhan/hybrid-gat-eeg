@@ -1,0 +1,27 @@
+# raw and derived data (download/compute locally; see README)
+train.csv
+train_eegs.zip
+train_eegs/
+psd_sb/
+fc_sb/
+psd_sb.zip
+fc_sb.zip
+*.pth
+mod/analysis_plan/results/graph_cache.pt
+mod/analysis_plan/results/r1_flat_features.npz
+mod/analysis_plan/results/r6_features.npz
+mod/analysis_plan/results/r3_features/
+mod/analysis_plan/results/a6_features.csv
+mod/analysis_plan/results/a4_asymmetry_features.csv
+mod/analysis_plan/results/*_oldorder*
+mod/analysis_plan/results/*.log
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+venv/
+.venv/
+mod/analysis_plan/results/figs_v5/
+
+# manuscript and submission package: kept locally, not published
+manuscript/
+submission_BSPC/

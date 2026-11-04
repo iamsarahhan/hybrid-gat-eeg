@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+message: "If you use this code or the patient-grouped fold assignment, please cite the manuscript below."
+title: "Hybrid graph attention network over multi-measure functional connectivity for seizures and periodic discharges in critical-care EEG"
+authors:
+  - family-names: Han
+    given-names: Hyun-Jee
+  - family-names: Jo
+    given-names: Donghyeok
+  - family-names: Kang
+    given-names: Minju
+  - family-names: Lee
+    given-names: SangWook
+  - family-names: Kim
+    given-names: Hakseung
+  - family-names: Huh
+    given-names: Hyub
+  - family-names: Kim
+    given-names: Dong-Joo
+version: "1.0.0"
+date-released: "2026-11-02"
+license: MIT

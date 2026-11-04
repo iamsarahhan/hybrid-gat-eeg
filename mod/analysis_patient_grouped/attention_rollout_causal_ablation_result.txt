@@ -1,0 +1,67 @@
+=== Phase 3-1/3-2: Attention rollout top channel-pairs + causal edge-ablation ===
+
+Rollout attention is graph-branch-only (see module docstring for hybrid-model caveat).
+
+
+[SEIZURE] top-10 channel pairs by rollout attention:
+    F8 -- T4    weight=0.11385
+   Fp1 -- T4    weight=0.11368
+    T4 -- O1    weight=0.11244
+    C3 -- T4    weight=0.11223
+    Cz -- T4    weight=0.11223
+   Fp1 -- F8    weight=0.11185
+    T3 -- T4    weight=0.11099
+    F4 -- T4    weight=0.11098
+    T4 -- O2    weight=0.11082
+    F8 -- O1    weight=0.11060
+
+[LPD] top-10 channel pairs by rollout attention:
+    F7 -- O1    weight=0.11405
+    F8 -- O1    weight=0.11213
+   Fp2 -- O1    weight=0.11184
+    C3 -- O1    weight=0.11170
+    T3 -- O1    weight=0.11163
+    F3 -- O1    weight=0.11152
+    C4 -- O1    weight=0.11122
+    O1 -- O2    weight=0.11114
+    Pz -- O1    weight=0.11112
+    F7 -- F8    weight=0.11040
+
+[GPD] top-10 channel pairs by rollout attention:
+   Fp1 -- C3    weight=0.11407
+    C3 -- T4    weight=0.11364
+    C3 -- C4    weight=0.11307
+   Fp2 -- C3    weight=0.11302
+    C3 -- T5    weight=0.11219
+    C3 -- Cz    weight=0.11205
+    C3 -- O1    weight=0.11175
+    T3 -- C3    weight=0.11130
+    C3 -- P3    weight=0.11091
+   Fp1 -- T4    weight=0.11084
+
+[OTHERS] top-10 channel pairs by rollout attention:
+    C3 -- Cz    weight=0.11059
+   Fp1 -- C3    weight=0.10997
+   Fp2 -- C3    weight=0.10979
+    C3 -- O1    weight=0.10972
+    C3 -- T4    weight=0.10957
+    C3 -- O2    weight=0.10886
+    F7 -- C3    weight=0.10883
+    T3 -- C3    weight=0.10876
+   Fp1 -- Cz    weight=0.10865
+    F8 -- C3    weight=0.10849
+
+
+=== Causal ablation: top-10 attention edges vs 30 random-edge controls ===
+Class        BaseAcc   TopAblAcc   TopDrop  RandDropMean  RandDropSD   p(perm)
+------------------------------------------------------------------------------------------
+SEIZURE       0.6268      0.6266   +0.0002       -0.0004      0.0014    0.2581 
+LPD           0.4884      0.4877   +0.0008       +0.0010      0.0018    0.8387 
+GPD           0.6820      0.6818   +0.0002       +0.0009      0.0014   0.03226 *
+OTHERS        0.6534      0.6539   -0.0004       -0.0007      0.0009         1 
+
+Note: 10-fold columns (BaseAcc/TopAblAcc/TopDrop) use all 10 folds' test sets for the
+point estimate. The random-edge null (RandDropMean/SD, p) uses fold 1 only (30 repeats)
+for compute reasons -- same fold-1-only scoping as the seed-stability / permutation-null
+checks. 'Convergent and significant' (per reviewer #2) = top-attention-edge ablation drop
+exceeds the random-edge null at p<0.05.

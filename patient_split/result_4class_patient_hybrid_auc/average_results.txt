@@ -1,0 +1,46 @@
+=== Average Performance Across All Folds (patient-grouped, hybrid GAT+flatFC) ===
+
+Overall Average Accuracy: 0.6150
+
+=== Macro-averaged Metrics ===
+Sensitivity: 0.5979
+Specificity: 0.8709
+Precision: 0.6032
+F1: 0.5912
+Auc: 0.8347
+
+=== Class-wise Average Performance ===
+
+SEIZURE:
+Sensitivity: 0.6269
+Specificity: 0.8763
+Precision: 0.6386
+F1: 0.6251
+Auc: 0.8384
+
+LPD:
+Sensitivity: 0.4620
+Specificity: 0.8973
+Precision: 0.5565
+F1: 0.4985
+Auc: 0.8119
+
+GPD:
+Sensitivity: 0.6446
+Specificity: 0.9133
+Precision: 0.6778
+F1: 0.6553
+Auc: 0.8686
+
+OTHERS:
+Sensitivity: 0.6582
+Specificity: 0.7965
+Precision: 0.5398
+F1: 0.5859
+Auc: 0.8198
+
+=== Average Confusion Matrix ===
+564.10 106.50 69.50 159.90
+124.60 439.60 81.30 254.50
+105.30 66.40 613.80 114.50
+126.90 103.70 81.30 588.10

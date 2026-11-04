@@ -1,0 +1,46 @@
+=== Fold 9 Performance Report (patient-grouped, soft-label hybrid GAT+flatFC) ===
+
+Overall Accuracy: 0.5620
+
+=== Macro-averaged Metrics ===
+Sensitivity: 0.5354
+Specificity: 0.8473
+Precision: 0.5990
+F1: 0.5473
+Auc: 0.8076
+
+=== Class-wise Performance ===
+
+SEIZURE:
+Sensitivity: 0.6484
+Specificity: 0.8520
+Precision: 0.6406
+F1: 0.6445
+Auc: 0.8437
+
+LPD:
+Sensitivity: 0.4052
+Specificity: 0.9120
+Precision: 0.5521
+F1: 0.4674
+Auc: 0.8036
+
+GPD:
+Sensitivity: 0.3980
+Specificity: 0.9649
+Precision: 0.7284
+F1: 0.5147
+Auc: 0.8457
+
+OTHERS:
+Sensitivity: 0.6901
+Specificity: 0.6603
+Precision: 0.4751
+F1: 0.5628
+Auc: 0.7373
+
+=== Confusion Matrix ===
+581      52       43       220     
+137      265      10       242     
+28       63       236      266     
+161      100      35       659     

@@ -1,0 +1,30 @@
+=== Figure 8c: TOST equivalence across single-FC-measure models (10-fold paired) ===
+
+Equivalence margin: delta = +/-0.02 macro AUC, alpha = 0.05
+
+Per-condition mean macro AUC:
+  corr  : 0.8076 +/- 0.0249
+  coh   : 0.7842 +/- 0.0372
+  aec   : 0.7987 +/- 0.0261
+  plv   : 0.8067 +/- 0.0237
+
+Pair             Mean diff                90% CI   p(TOST)  Equivalent@delta
+--------------------------------------------------------------------------------
+corr vs coh        +0.0233    [+0.0119, +0.0347]    0.6977  no
+corr vs aec        +0.0089    [-0.0034, +0.0212]   0.06627  no
+corr vs plv        +0.0009    [-0.0052, +0.0069] 0.0001297  YES
+coh vs aec         -0.0145    [-0.0272, -0.0017]    0.2222  no
+coh vs plv         -0.0225    [-0.0341, -0.0108]     0.646  no
+aec vs plv         -0.0080    [-0.0186, +0.0026]   0.03404  YES
+
+2/6 pairs statistically equivalent at delta=+/-0.02, alpha=0.05.
+
+Interpretation: a pair is 'equivalent' only if the 90% CI for the mean AUC
+difference falls entirely within [-delta, +delta]. This is a positive claim of
+practical interchangeability between single-measure models, not merely a failure
+to detect a difference. Combined with fc_ablation_result.txt (removing any one
+measure from the FULL model costs 0.009-0.019 AUC, all significant), the overall
+picture is: each measure carries some unique signal relative to the full model,
+but as standalone single-measure models they may still land within a modest
+practical-equivalence band of each other -- these are compatible, not
+contradictory, claims (complementary-but-partially-substitutable).

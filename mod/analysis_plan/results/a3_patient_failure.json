@@ -1,0 +1,41 @@
+{
+ "n_patients": 1752,
+ "median_clips_per_patient": 7.0,
+ "acc_quartiles": {
+  "0.1": 0.0,
+  "0.25": 0.333,
+  "0.5": 0.75,
+  "0.75": 1.0,
+  "0.9": 1.0
+ },
+ "share_of_errors_from_worst_10pct_patients": 0.7026678141135972,
+ "share_of_clips_in_worst_10pct_patients": 0.5678611111111111,
+ "patients_with_zero_correct": 249,
+ "patients_all_correct": 625,
+ "patient_regression": {
+  "coef": {
+   "const": 0.2775,
+   "log_n": 0.0357,
+   "cons": 0.3584,
+   "label_entropy": -0.274,
+   "dom_1": -0.1078,
+   "dom_2": 0.0541,
+   "dom_3": 0.0074
+  },
+  "p": {
+   "const": 0.0011,
+   "log_n": 0.0,
+   "cons": 0.0,
+   "label_entropy": 0.0,
+   "dom_1": 0.0,
+   "dom_2": 0.043,
+   "dom_3": 0.6908
+  },
+  "r2": 0.20379038916502645
+ },
+ "recording_consistency": {
+  "n_patients_multi_recording": 1222,
+  "between_patient_var": 0.1055462342624885,
+  "within_patient_var": 0.14571976052852434
+ }
+}

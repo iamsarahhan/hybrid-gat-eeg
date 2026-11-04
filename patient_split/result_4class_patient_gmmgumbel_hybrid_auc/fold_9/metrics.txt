@@ -1,0 +1,46 @@
+=== Fold 9 Performance Report (patient-grouped, GMM+Gumbel-refined hybrid GAT+flatFC) ===
+
+Overall Accuracy: 0.5852
+
+=== Macro-averaged Metrics ===
+Sensitivity: 0.5712
+Specificity: 0.8587
+Precision: 0.5954
+F1: 0.5784
+Auc: 0.7984
+
+=== Class-wise Performance ===
+
+SEIZURE:
+Sensitivity: 0.6574
+Specificity: 0.8797
+Precision: 0.6897
+F1: 0.6731
+Auc: 0.8500
+
+LPD:
+Sensitivity: 0.4985
+Specificity: 0.8437
+Precision: 0.4605
+F1: 0.4787
+Auc: 0.7749
+
+GPD:
+Sensitivity: 0.4975
+Specificity: 0.9461
+Precision: 0.6860
+F1: 0.5767
+Auc: 0.8208
+
+OTHERS:
+Sensitivity: 0.6314
+Specificity: 0.7653
+Precision: 0.5452
+F1: 0.5852
+Auc: 0.7478
+
+=== Confusion Matrix ===
+589      87       45       175     
+100      326      27       201     
+17       154      295      127     
+148      141      63       603     

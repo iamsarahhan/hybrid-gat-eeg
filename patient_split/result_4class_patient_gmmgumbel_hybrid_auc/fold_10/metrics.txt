@@ -1,0 +1,46 @@
+=== Fold 10 Performance Report (patient-grouped, GMM+Gumbel-refined hybrid GAT+flatFC) ===
+
+Overall Accuracy: 0.5651
+
+=== Macro-averaged Metrics ===
+Sensitivity: 0.5434
+Specificity: 0.8558
+Precision: 0.5630
+F1: 0.5350
+Auc: 0.7942
+
+=== Class-wise Performance ===
+
+SEIZURE:
+Sensitivity: 0.5202
+Specificity: 0.8508
+Precision: 0.4800
+F1: 0.4993
+Auc: 0.7425
+
+LPD:
+Sensitivity: 0.6186
+Specificity: 0.8745
+Precision: 0.7903
+F1: 0.6940
+Auc: 0.8550
+
+GPD:
+Sensitivity: 0.3805
+Specificity: 0.9496
+Precision: 0.6020
+F1: 0.4663
+Auc: 0.8093
+
+OTHERS:
+Sensitivity: 0.6545
+Specificity: 0.7482
+Precision: 0.3796
+F1: 0.4805
+Auc: 0.7699
+
+=== Confusion Matrix ===
+516      145      76       255     
+196      1270     82       505     
+262      22       301      206     
+101      170      41       591     

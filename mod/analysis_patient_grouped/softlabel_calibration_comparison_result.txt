@@ -1,0 +1,23 @@
+=== R2-5 ablation: hard-label vs vote-distribution soft-label training ===
+
+======================================================================
+  HARD (argmax label)  vs  SOFT (vote distribution)
+======================================================================
+
+--- DeLong AUC comparison ---
+  [SEIZURE ] AUC HARD=0.8308 SOFT=0.8238  diff(SOFT-HARD)=-0.0069  z=+5.348  p=8.891e-08 (*)
+  [LPD     ] AUC HARD=0.8251 SOFT=0.8334  diff(SOFT-HARD)=+0.0082  z=-7.330  p=2.303e-13 (*)
+  [GPD     ] AUC HARD=0.8811 SOFT=0.8849  diff(SOFT-HARD)=+0.0038  z=-4.231  p=2.326e-05 (*)
+  [OTHERS  ] AUC HARD=0.8208 SOFT=0.8248  diff(SOFT-HARD)=+0.0040  z=-3.454  p=0.0005517 (*)
+  ---
+  [MACRO]    diff(SOFT-HARD)=+0.0023  z=+4.023  p=5.751e-05 (*)
+
+--- Calibration (ECE, 15 bins; multiclass Brier score) ---
+  [HARD (argmax label)      ] ECE=0.0832  Brier=0.5265  accuracy=0.6127  mean_confidence=0.6959  (confidence - accuracy = +0.0832)
+  [SOFT (vote distribution) ] ECE=0.0411  Brier=0.5382  accuracy=0.6050  mean_confidence=0.6395  (confidence - accuracy = +0.0345)
+
+Note: per-class DeLong covariance is exact (paired, same test samples);
+cross-class combination still assumes independence across the 4 one-vs-rest
+AUCs (conservative approximation, same as delong_correct.py). ECE/Brier are
+point estimates on pooled test predictions, not paired-tested (no established
+paired test for ECE across models in this codebase).

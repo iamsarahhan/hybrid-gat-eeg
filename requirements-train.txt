@@ -1,0 +1,22 @@
+# 인수인계용 재현 환경 — venv/bin/pip freeze 기준 (2026-10-21), 핵심 패키지만 핀 고정
+# 설치 순서(중요): torch/torchvision/torch-geometric은 CUDA 빌드를 먼저 설치해야 함.
+#
+#   python3.11 -m venv venv && source venv/bin/activate
+#   pip install torch==2.8.0 torchvision==0.23.0 --index-url https://download.pytorch.org/whl/cu128
+#   pip install torch-geometric==2.7.0
+#   pip install -r requirements.txt
+#
+# (nvidia-cu12-* 서브패키지는 위 torch 설치 시 pip가 자동으로 함께 받아옴 — 별도 명시 불필요)
+
+numpy==2.3.3
+pandas==2.3.2
+scipy==1.16.2
+scikit-learn==1.7.2
+optuna==4.9.0
+matplotlib==3.10.6
+seaborn==0.13.2
+torchmetrics==1.9.0
+torchgeometry==0.1.2
+python-docx==1.2.0
+tqdm==4.67.3
+PyYAML==6.0.3

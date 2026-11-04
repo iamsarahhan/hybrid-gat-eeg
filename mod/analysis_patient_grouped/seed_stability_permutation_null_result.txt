@@ -1,0 +1,52 @@
+=== Phase 3-3: Seed-stability (fold 1, 5 seeds, real labels) ===
+
+Seed       Val AUC  Test Acc
+1000        0.8319    0.6182
+1001        0.8408    0.6606
+1002        0.8337    0.6528
+1003        0.8361    0.6134
+1004        0.8378    0.6102
+
+Test acc: 0.6311 +/- 0.0212
+Val AUC:  0.8361 +/- 0.0031
+
+Pairwise rollout-matrix correlation across seeds (per class, real labels):
+  SEIZURE   : mean r=+0.8610  sd=0.0888  (n=10 pairs)
+  LPD       : mean r=+0.9107  sd=0.0305  (n=10 pairs)
+  GPD       : mean r=+0.9490  sd=0.0166  (n=10 pairs)
+  OTHERS    : mean r=+0.8287  sd=0.1232  (n=10 pairs)
+
+Top-K channel-pair Jaccard overlap across seeds (per class, real labels):
+  SEIZURE   : mean Jaccard=0.4422  (top-10, n=10 pairs)
+  LPD       : mean Jaccard=0.3779  (top-10, n=10 pairs)
+  GPD       : mean Jaccard=0.6603  (top-10, n=10 pairs)
+  OTHERS    : mean Jaccard=0.2942  (top-10, n=10 pairs)
+
+
+=== Phase 3-4: Label-permutation null (fold 1, 5 permutations) ===
+
+Seed       Val AUC  Test Acc
+2000        0.5732    0.3134
+2001        0.5932    0.3126
+2002        0.6116    0.3958
+2003        0.5581    0.2482
+2004        0.5808    0.2519
+
+Test acc: 0.3044 +/- 0.0537  (chance = 0.25 for 4 balanced classes)
+Val AUC:  0.5834 +/- 0.0181  (chance = 0.5)
+
+Real-label mean rollout vs permuted-label mean rollout (per class):
+  SEIZURE   : r=+0.9119  top-10 Jaccard=0.6667
+  LPD       : r=+0.5505  top-10 Jaccard=0.3333
+  GPD       : r=+0.8749  top-10 Jaccard=0.6667
+  OTHERS    : r=+0.3521  top-10 Jaccard=0.0526
+
+Interpretation guide:
+- If permuted-label test acc collapses to ~0.25, permutation worked as intended (sanity check).
+- High seed-stability correlation/Jaccard (real labels) = attention pattern is reproducible,
+  a necessary (not sufficient) condition for trusting it as interpretation.
+- High real-vs-permuted correlation/Jaccard = attention looks similar regardless of whether
+  labels are real or nonsense, i.e. driven by graph/data structure rather than the learned
+  task -- this would undermine using attention as a circuit-level explanation, independent
+  of the causal-ablation finding (attention_rollout_and_causal_ablation.py) that top-attention
+  edges are not causally load-bearing either.

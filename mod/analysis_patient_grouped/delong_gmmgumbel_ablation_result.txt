@@ -1,0 +1,15 @@
+=== R1-1 ablation: GMM+Gumbel edge refinement, DeLong test (fast midrank) ===
+
+======================================================================
+  OFF (plain hybrid)  vs  ON (GMM+Gumbel refined)
+======================================================================
+  [SEIZURE ] AUC OFF=0.8308 ON=0.8237  diff(ON-OFF)=-0.0071  z=+6.507  p=7.691e-11 (*)
+  [LPD     ] AUC OFF=0.8251 ON=0.8263  diff(ON-OFF)=+0.0012  z=-1.211  p=0.2258 
+  [GPD     ] AUC OFF=0.8811 ON=0.8780  diff(ON-OFF)=-0.0031  z=+4.202  p=2.651e-05 (*)
+  [OTHERS  ] AUC OFF=0.8208 ON=0.8264  diff(ON-OFF)=+0.0056  z=-5.891  p=3.844e-09 (*)
+  ---
+  [MACRO]    diff(ON-OFF)=-0.0009  z=-1.821  p=0.06864 
+
+Note: per-class DeLong covariance is exact (paired, same test samples);
+cross-class combination still assumes independence across the 4 one-vs-rest
+AUCs (conservative approximation, same as delong_correct.py).
