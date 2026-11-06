@@ -21,6 +21,7 @@ __pycache__/
 venv/
 .venv/
 mod/analysis_plan/results/figs_v5/
+patient_split/results*
 
 # manuscript and submission package: kept locally, not published
 manuscript/
